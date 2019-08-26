@@ -2,6 +2,9 @@ package com.csh.erick.wtfashion
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,12 +27,9 @@ class MainActivity : AppCompatActivity() {
         wardrobe.addShirt(Shirt("burgundy", false))
         wardrobe.addShirt(Shirt("orange", false))
 
-        for (i in 0..5) {
-            val outfit = wardrobe.getOutfit()
-            outfit.wear()
-        }
-
-        wardrobe.doLaundry()
+        val adapter = ClothingRVAdapter(this, wardrobe.cleanShirts)
+        shirtsRV.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        shirtsRV.adapter = adapter
     }
 }
 

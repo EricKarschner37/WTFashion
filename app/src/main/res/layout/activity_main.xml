@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".MainActivity"
     android:background="#AEC6CF">
@@ -11,11 +12,18 @@
         style="@style/HeaderText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="@string/wardrobe" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/shirtsRV"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    <com.synnapps.carouselview.CarouselView
+        android:layout_width="wrap_content"
+        android:layout_height="240dp"
+        app:autoPlay="false"
+        android:id="@+id/shirts_cv"/>
+
+    <com.synnapps.carouselview.CarouselView
+        android:layout_width="wrap_content"
+        android:layout_height="240dp"
+        app:autoPlay="false"
+        android:id="@+id/pants_cv"/>
 
 </LinearLayout>

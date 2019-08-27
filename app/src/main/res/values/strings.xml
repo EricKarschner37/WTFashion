@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">WTFashion</string>
     <string name="clothing_image_description">An image of the clothing item</string>
+    <string name="wardrobe">Wardrobe</string>
 </resources>

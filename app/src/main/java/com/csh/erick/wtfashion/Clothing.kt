@@ -3,6 +3,7 @@ package com.csh.erick.wtfashion
 abstract class Clothing(val color: String, var name: String) {
     lateinit var onWearListener: (Clothing) -> (Unit)
     lateinit var onWashListener: (Clothing) -> (Unit)
+    open var drawable = R.drawable.shirt
     var isClean = false
 
     fun wear(){

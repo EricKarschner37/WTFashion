@@ -5,6 +5,8 @@ class Pants(color: String,
             val isJeans: Boolean = false,
             name: String = "$color ${if (isShorts) "shorts" else "trousers"}"): Clothing(color, name) {
 
+    override var drawable = R.drawable.pants
+
     fun matchShirt(shirt: Shirt): Boolean{
         return when{
             this.isJeans -> true

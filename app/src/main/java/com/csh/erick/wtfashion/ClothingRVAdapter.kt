@@ -17,12 +17,12 @@ class ClothingRVAdapter(private val context: Context, val shirts: ArrayList<Shir
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val shirt = shirts[position]
+        val shirt = shirts[position % shirts.size]
         holder.descText.text = shirt.name
         holder.imageView.setImageDrawable(context.getDrawable(R.drawable.shirt))
     }
 
-    override fun getItemCount() = shirts.size
+    override fun getItemCount() = Int.MAX_VALUE
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val descText = itemView.findViewById<TextView>(R.id.desc_text)

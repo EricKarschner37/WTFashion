@@ -3,7 +3,7 @@ package com.csh.erick.wtfashion
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.LinearSnapHelper
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -28,8 +28,13 @@ class MainActivity : AppCompatActivity() {
         wardrobe.addShirt(Shirt("orange", false))
 
         val adapter = ClothingRVAdapter(this, wardrobe.cleanShirts)
-        shirtsRV.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        layoutManager.scrollToPosition(Int.MAX_VALUE / 2)
+        shirtsRV.layoutManager = layoutManager
         shirtsRV.adapter = adapter
+
+        val helper = LinearSnapHelper()
+        helper.attachToRecyclerView(shirtsRV)
     }
 }
 
